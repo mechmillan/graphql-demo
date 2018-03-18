@@ -1,5 +1,5 @@
 ## Setup
-- npm run start to start http://localhost:3000
+- __npm run start__ to start http://localhost:3000
 - this will redirect you to /graphql, the interactive GraphiQL GUI
 
 - Sample Query:
@@ -14,5 +14,5 @@
 }
 ```
 
-Change the id to get different Pokemon! The 'limit' argument limits the amount of
-moves returned (optional)
+Change the id (required) to get a different Pokemon! The 'limit' argument will
+limits the amount of moves returned (optional)
