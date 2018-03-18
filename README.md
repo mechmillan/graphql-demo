@@ -13,3 +13,6 @@
   }
 }
 ```
+
+Change the id to get different Pokemon! The 'limit' argument limits the amount of
+moves returned (optional)
