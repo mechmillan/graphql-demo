@@ -27,7 +27,9 @@ var corsOptions = {
 app.use(cors(corsOptions));
 
 // for now, redirect to localhost:3000/graphql
-// eventually, can use the /graphql endpoint on front-end code (i.e in a componentDidMount method inside a React component to send a post request with desired fields)
+// eventually, can use the /graphql endpoint on front-end code
+// (i.e in a componentDidMount method inside a React component to send
+// a post request with desired fields)
 app.get('/', (req, res, next) => {
   res.redirect('/graphql');
 });
@@ -42,9 +44,9 @@ app.use('/graphql', graphqlHTTP(req => {
 
   // config options
   return {
-    schema,
+    schema, // from schema.js
     context: {
-      pokemonLoader,
+      pokemonLoader, // for batching, caching
     },
     graphiql: true // GraphiQL tool to manually issue GraphQL queries
   };

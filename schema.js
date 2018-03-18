@@ -41,7 +41,12 @@ const PokemonType = new GraphQLObjectType({
     },
     moves: {
       type: new GraphQLList(GraphQLString), // return moves as a list of strings
-      resolve: json => json.moves.map(key => key.move.name)
+      args: {
+        // what if only care about first 5 or last 5 moves?
+        limit: { type: GraphQLInt } // allow client to limit the returned results
+      },
+      resolve: (json, args) =>
+        json.moves.slice(0, args.limit).map(key => key.move.name)
     }
   })
 });
